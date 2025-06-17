@@ -1,0 +1,45 @@
+services:
+  - type: web
+    name: ai-interview-backend
+    env: python
+    buildCommand: "cd backend && pip install -r requirements.txt"
+    startCommand: "cd backend && gunicorn --worker-class eventlet -w 1 --bind 0.0.0.0:$PORT src.main:app"
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: ai-interview-db
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: AWS_ACCESS_KEY_ID
+        sync: false
+      - key: AWS_SECRET_ACCESS_KEY
+        sync: false
+      - key: AWS_S3_BUCKET_NAME
+        sync: false
+      - key: AWS_REGION
+        value: us-east-1
+      - key: CORS_ORIGINS
+        value: https://ai-interview-frontend.onrender.com
+
+  - type: web
+    name: ai-interview-frontend
+    env: static
+    buildCommand: "cd frontend && npm install && npm run build"
+    staticPublishPath: frontend/dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://ai-interview-backend.onrender.com
+      - key: VITE_SOCKET_URL
+        value: wss://ai-interview-backend.onrender.com
+
+databases:
+  - name: ai-interview-db
+    databaseName: ai_interview_chatbot
+    user: ai_interview_user
+
+
