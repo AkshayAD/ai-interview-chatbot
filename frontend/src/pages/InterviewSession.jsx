@@ -18,7 +18,7 @@ import {
   User,
   Bot
 } from 'lucide-react';
-import useWebRTC from '../hooks/useWebRTC';
+import { useWebRTC } from '../hooks/useWebRTC';
 import socketService from '../services/socket';
 import { interviewAPI } from '../services/api';
 
