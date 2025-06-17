@@ -39,7 +39,8 @@ app.register_blueprint(interview_bp, url_prefix='/api/interview')
 app.register_blueprint(admin_bp, url_prefix='/api/admin')
 
 # Database configuration
-database_url = os.getenv('DATABASE_URL', f"sqlite:///{os.path.join(os.path.dirname(__file__), 'database', 'app.db')}")
+database_url = os.getenv("DATABASE_URL", f"sqlite:///{os.path.join(os.path.dirname(__file__), 'database', 'app.db')}")
+print(f"Attempting to connect to database: {database_url}")
 app.config['SQLALCHEMY_DATABASE_URI'] = database_url
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
