@@ -4,6 +4,7 @@ Flask-SocketIO
 gunicorn
 eventlet
 python-dotenv
+Flask-SQLAlchemy
 annotated-types==0.7.0
 anyio==4.9.0
 arabic-reshaper==3.0.0
