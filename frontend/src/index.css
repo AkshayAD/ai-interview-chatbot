@@ -4,3 +4,10 @@
 @tailwind utilities;
 
 
+
+
+body {
+  background-color: #f0f0f0; /* Light gray to test if CSS is applied */
+}
+
+
