@@ -10,7 +10,13 @@ importers:
     dependencies:
       '@hookform/resolvers':
         specifier: ^5.0.1
-        version: 5.0.1(react-hook-form@7.56.3(react@19.1.0))
+        version: 5.0.1(react-hook-form@7.56.3(react@19.1.0))\
+      autoprefixer:
+        specifier: ^10.4.19
+        version: 10.4.19(postcss@8.4.38)
+      postcss:
+        specifier: ^8.4.38
+        version: 8.4.38
       '@radix-ui/react-accordion':
         specifier: ^1.2.10
         version: 1.2.10(@types/react-dom@19.1.5(@types/react@19.1.4))(@types/react@19.1.4)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -2640,7 +2646,16 @@ snapshots:
   '@ampproject/remapping@2.3.0':
     dependencies:
       '@jridgewell/gen-mapping': 0.3.8
-      '@jridgewell/trace-mapping': 0.3.25
+      '@jridgewell/trace-mapping': 0.3.25\
+
+  autoprefixer@10.4.19(postcss@8.4.38):
+    resolution: {integrity: sha512-oQ4s+J0yAXG5lghs88G2m5B422Ry7i3OAnS3eIqPNjWqORJc/3ggpke2v3bRad1r2s3ILiPf/V2AQSbgrsCVCQ==}
+    peerDependencies:
+      postcss: ^8.1.0
+
+  postcss@8.4.38:
+    resolution: {integrity: sha512-Y291iH2qy1R2i2Qrt5zt532p1d/BHF2s02a24x1mYp2b3BvS5s0y6iI7FUO37n4L24A3j3G+D/vA+gAQAw==}
+    engines: {node: ^10 || ^12 || >=14}
 
   '@babel/code-frame@7.27.1':
     dependencies:
