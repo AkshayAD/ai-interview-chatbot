@@ -3,7 +3,10 @@ services:
     name: ai-interview-backend
     env: python
     buildCommand: "pip install -r backend/requirements.txt"
-    startCommand: "/usr/local/bin/python -m gunicorn --worker-class eventlet -w 1 --bind 0.0.0.0:$PORT backend.src.main:app"
+    startCommand: >
+      uvicorn backend.src.main:app
+      --host 0.0.0.0
+      --port $PORT
     envVars:
       - key: FLASK_ENV
         value: production
@@ -41,5 +44,3 @@ databases:
   - name: ai-interview-db
     databaseName: ai_interview_chatbot
     user: ai_interview_user
-
-
