@@ -3,7 +3,7 @@ services:
     name: ai-interview-backend
     env: python
     buildCommand: "pip install -r backend/requirements.txt"
-    startCommand: "gunicorn -w 4 -k uvicorn.workers.UvicornWorker -b 0.0.0.0:$PORT backend.src.main:app"
+    startCommand: "gunicorn --worker-class eventlet -w 1 backend.src.main:app"
     envVars:
       - key: FLASK_ENV
         value: production
