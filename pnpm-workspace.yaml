@@ -1,13 +1,11 @@
 packages:
   - 'frontend'
-  - 'backend'
+
+
 
 packageExtensions:
-  "@tailwindcss/oxide":
-    dependencies:
-      esbuild: ^0.20.0 # or your desired version
-  esbuild:
-    scripts:
-      postinstall: "node ./bin/esbuild"
+  tailwindcss:
+    peerDependencies:
+      - "postcss"
 
 

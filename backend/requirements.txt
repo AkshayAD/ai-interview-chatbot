@@ -92,3 +92,9 @@ google-generativeai
 boto3
 
 
+
+psycopg2-binary
+google-generativeai
+boto3
+
+
