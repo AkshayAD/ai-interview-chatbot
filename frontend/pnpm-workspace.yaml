@@ -1,7 +1,0 @@
-pnpm:
-  builds:
-    allowed:
-      - "@tailwindcss/oxide"
-      - "esbuild"
-
-
