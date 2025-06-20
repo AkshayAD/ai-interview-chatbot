@@ -3,7 +3,7 @@ services:
     name: ai-interview-backend
     env: python
     buildCommand: "pip install -r backend/requirements.txt"
-    startCommand: "gunicorn --worker-class gevent -w 1 backend.src.main:app"
+    startCommand: "python -m gunicorn --worker-class eventlet -w 1 --bind 0.0.0.0:$PORT backend.src.main:app"
     envVars:
       - key: FLASK_ENV
         value: production
@@ -29,7 +29,7 @@ services:
   - type: web
     name: ai-interview-frontend
     env: static
-    buildCommand: "cd frontend && pnpm install && pnpm run build"
+    buildCommand: "pnpm install && pnpm --filter frontend run build"
     staticPublishPath: frontend/dist
     envVars:
       - key: VITE_API_URL
