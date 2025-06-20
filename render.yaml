@@ -37,17 +37,6 @@ services:
       - key: VITE_SOCKET_URL
         value: wss://ai-interview-backend.onrender.com
 
-  - type: web
-    name: ai-interview-frontend
-    env: static
-    buildCommand: "cd frontend && npm install && npm run build"
-    staticPublishPath: frontend/dist
-    envVars:
-      - key: VITE_API_URL
-        value: https://ai-interview-backend.onrender.com
-      - key: VITE_SOCKET_URL
-        value: wss://ai-interview-backend.onrender.com
-
 databases:
   - name: ai-interview-db
     databaseName: ai_interview_chatbot
