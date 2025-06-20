@@ -3,6 +3,7 @@ Flask-Cors
 Flask-SocketIO
 gunicorn
 eventlet
+gevent
 python-dotenv
 Flask-SQLAlchemy
 annotated-types==0.7.0
