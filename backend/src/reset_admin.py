@@ -1,8 +1,8 @@
 import os
 from flask import Flask
 from werkzeug.security import generate_password_hash
-from src.models.user import db
-from src.models.interview import AdminUser
+from models.user import db
+from models.interview import AdminUser
 
 def reset_admin_password():
     app = Flask(__name__)
